@@ -38,3 +38,25 @@ console.log("5" > 4);
 console.log("0" == false);
 console.log([] == 0);
 console.log(" " == 0);
+
+// *----------------------------------------------*
+// 1) stack (primitive)
+// 2) Heap (non primitive)
+
+let userEmail = "abc123@gmail.com";
+console.log(userEmail);
+
+let anotherUser = userEmail;
+anotherUser = "abc456@gmail.com";
+console.log(anotherUser);
+console.log(userEmail);
+
+let user = {
+  email: "khan23@gmail.com",
+  age: 34,
+};
+
+let userOne = user;
+userOne.email = "ali34@gmail.com";
+console.log(userOne.email);
+console.log(user.email);
