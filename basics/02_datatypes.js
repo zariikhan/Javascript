@@ -57,6 +57,7 @@ const myObj = {
 console.log(typeof myObj);
 
 let heroes = ["superman", "spiderman", "thor"];
+console.log(heroes)
 console.log(typeof heroes);
 
 let stud = {
