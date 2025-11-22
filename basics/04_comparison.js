@@ -4,7 +4,7 @@
 // <=
 // >
 // <
-// === => for strictness
+// === => for comparing value and its type
 // !==
 // !=
 
