@@ -6,11 +6,7 @@
  null
  undefined
  Symbol => uniqueness
- BigInt => write n after the number
-
- 2) Non Primitive datatypes
- Object
- array*/
+ BigInt => write n after the number*/
 
 let name = "ali";
 console.log(typeof name);
@@ -30,14 +26,6 @@ console.log(typeof fatherName);
 let isloggedIn = true;
 console.log(typeof isloggedIn);
 
-let obj = {
-  name: "zaryab",
-  age: 23,
-};
-console.log(typeof obj);
-
-let arr = [1, 2, 3, 4, 5];
-
 let ages = [];
 console.log(typeof ages);
 
@@ -48,8 +36,35 @@ let BigInt = 12345678909866n;
 console.log(typeof BigInt);
 
 let value = 23;
+console.log(value);
+
+let id = Symbol("123");
+console.log(typeof id);
+
+let anotherId = Symbol("123");
+console.log(id == anotherId);
+
+/*2) Non Primitive datatypes
+ Object
+ function
+ array*/
+
+const myObj = {
+  name: "zaryab",
+  age: 23,
+};
+
+console.log(typeof myObj);
+
+let heroes = ["superman", "spiderman", "thor"];
+console.log(typeof heroes);
+
 let stud = {
   name: "khan",
 };
-console.log(value);
 console.log(stud);
+
+function myName() {
+  console.log("zaryab khan");
+}
+console.log(typeof myName);
