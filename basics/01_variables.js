@@ -44,4 +44,4 @@ console.log(rollNo)
 if (true) {
     let fullName = "jawad";
 }
-console.log(fullName)
+// console.log(fullName)
