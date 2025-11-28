@@ -71,3 +71,64 @@ const obj2 = { S: "Strawberry", M: "Mango" };
 // const obj3 = Object.assign({}, obj1, obj2);
 const obj3 = { ...obj1, ...obj2 };
 console.log(obj3);
+
+const course = {
+  name: "python",
+  price: "20k",
+  duration: "4 hours",
+};
+
+const { name, price: amount } = course;
+console.log(name);
+console.log(amount);
+
+// questions
+const students = {
+  name: "ali",
+  age: 20,
+  isPass: true,
+};
+console.log(students.age);
+console.log(students["age"]);
+console.log(students);
+
+const car = {
+  brand: "toyota",
+  model: "corolla",
+  year: "2020",
+};
+car.color = "black";
+console.log(car);
+console.log(car.brand);
+
+const person = {
+  firstName: "zaryab",
+  lastName: "khan",
+  age: 23,
+};
+person.age = 24;
+console.log(person);
+
+const product = {
+  name: "laptop",
+  price: 50000,
+  brand: "hp",
+};
+product.quantity = 3;
+console.log(product);
+
+const book = {
+  title: "solid state physics",
+  author: "neil w Aschcroft",
+  year: 1990,
+};
+delete book.year;
+console.log(book);
+console.log(typeof book);
+console.log(Object.isFrozen(book))
+
+let jsonObject = JSON.stringify(book)
+console.log(jsonObject)
+
+let bookObject = JSON.parse(jsonObject)
+console.log(book)
