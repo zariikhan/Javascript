@@ -94,24 +94,56 @@ console.log(findMax(10, 20));
 
 function isEven(num1) {
   if (num1 % 2 === 0) {
-   console.log('even')
-  }else{
-    console.log('odd')
+    console.log("even");
+  } else {
+    console.log("odd");
   }
 }
 isEven(10);
 
-function fullName(firstName,lastName){
-return `${firstName} ${lastName}`
+function fullName(firstName, lastName) {
+  return `${firstName} ${lastName}`;
 }
-console.log(fullName("Ali","khan"))
+console.log(fullName("Ali", "khan"));
 
-function toCelcius(fahrenheit){
-  return celcius = (fahrenheit-32)*5/9
+function toCelcius(fahrenheit) {
+  let celcius = ((fahrenheit - 32) * 5) / 9;
+  return celcius.toFixed(2);
 }
-console.log(toCelcius(90))
+console.log(toCelcius(900));
 
-function greetUser(name){
-return `hello ${name}`
+function greetUser(name = "guest") {
+  return `hello ${name}`;
 }
-console.log(greetUser('zaryab'))
+console.log(greetUser("zaryab"));
+
+function findMaxNumber(...num1) {
+  return Math.max(...num1);
+}
+console.log(findMaxNumber(10, 20, 30));
+
+function isPrime(primeNum) {
+  if (primeNum <= 1) {
+    return false;
+  }
+  for (i = 2; i < primeNum; i++) {
+    if (primeNum % i === 0) return false;
+  }
+  return true;
+}
+console.log(isPrime(5));
+
+function factorial(n) {
+  if (n === 1) {
+    return 1;
+  }
+  return n * factorial(n - 1);
+}
+
+console.log(factorial(3));
+
+function checkingWords(statement) {
+  return statement.includes("javaScript");
+}
+console.log(checkingWords("i am learning javaScript"));
+console.log(checkingWords("i am learning coding"));
