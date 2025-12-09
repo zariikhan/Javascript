@@ -131,7 +131,6 @@ if (isNaN(num)) {
 
 // Write a program that checks three numbers and prints the largest one.
 
-
 let a = 10;
 let b = 25;
 let c = 7;
@@ -147,12 +146,12 @@ if (b > a && b > c) {
 // "eligible to vote" if age >= 18
 // "not eligible" otherwise
 
-(age>=18)? console.log("eligible to vote") : console.log("not eligible")
+age >= 18 ? console.log("eligible to vote") : console.log("not eligible");
 
-let x=10
-let y=20
-if(x>y){
-  console.log(`${x}`)
-}else{
-  console.log(`${y}`)
+let x = 10;
+let y = 20;
+if (x > y) {
+  console.log(`${x}`);
+} else {
+  console.log(`${y}`);
 }
