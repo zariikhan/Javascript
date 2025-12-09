@@ -82,5 +82,77 @@ value = null ?? 40 ?? 20;
 console.log(value);
 
 // ternory oprator
-let age = 18;
-(age >= 18) ? console.log("you can drive") : console.log("you can't drive");
+
+// age >= 18 ? console.log("you can drive") : console.log("you can't drive");
+
+// Write a program that checks a number and prints:
+// "Positive" if the number is greater than 0
+// "Negative" if the number is less than 0
+// "Zero" if the number is exactly 0
+
+let num = 7;
+if (num > 0) {
+  console.log("positive");
+} else if (num < 0) {
+  console.log("negative");
+} else if (num == 0) {
+  console.log("zero");
+} else {
+  console.log("NaN");
+}
+
+// Write a program that checks a person’s age and prints:
+// "Child" if age < 12
+// "Teenager" if age is between 13 and 19
+// "Adult" if age is 20 or above
+// "Invalid age" if age is negative
+let age = 20;
+if (age < 12) {
+  console.log("child");
+} else if (age >= 13 && age <= 19) {
+  console.log("teenager");
+} else if (age >= 20) {
+  console.log("adult");
+} else if (age < 0) {
+  console.log("invalid age");
+}
+
+// Write a program that checks a number and prints:
+// "Even" if the number is divisible by 2
+// "Odd" if not
+// "Invalid" if the value is not a number
+if (isNaN(num)) {
+  console.log("invalid");
+} else if (num % 2 == 0) {
+  console.log("even");
+} else {
+  console.log("odd");
+}
+
+// Write a program that checks three numbers and prints the largest one.
+
+
+let a = 10;
+let b = 25;
+let c = 7;
+if (b > a && b > c) {
+  console.log(`${b}`);
+} else if (a > b && a > c) {
+  console.log(`${a}`);
+} else {
+  console.log(`${c}`);
+}
+
+// Write an if else statement that prints:
+// "eligible to vote" if age >= 18
+// "not eligible" otherwise
+
+(age>=18)? console.log("eligible to vote") : console.log("not eligible")
+
+let x=10
+let y=20
+if(x>y){
+  console.log(`${x}`)
+}else{
+  console.log(`${y}`)
+}
