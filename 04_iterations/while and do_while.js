@@ -50,3 +50,11 @@ do {
   console.log(`${value}`);
   value++;
 } while (value <= 5);
+
+// Print the multiplication table of 3 (from 1 to 10) using a do-while loop.
+
+let mul = 1;
+do {
+  console.log(`3 * ${mul}  = ${mul * 3}`);
+  mul++;
+} while (mul <= 10);
