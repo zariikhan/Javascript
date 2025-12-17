@@ -26,3 +26,4 @@
 // let h1 = document.querySelector(".heading")
 // let h1 = document.querySelector("#first-h1");
 // h1.style.color = "purple";
+

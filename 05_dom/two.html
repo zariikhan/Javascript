@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+
+<body>
+    <div class="parent">
+        <div class="day">monday</div>
+        <div class="day">tuesday</div>
+        <div class="day">wendsday</div>
+        <div class="day">thursday</div>
+    </div>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur, tempore.</p>
+    <button>Click</button>
+</body>
+<script>
+    let body = document.querySelector("body")
+    body.style.backgroundColor = "black"
+    body.style.color = "white"
+
+    let div = document.querySelector("div")
+    console.log(div.childNodes)
+    console.log(div.children)
+    console.log(div.firstElementChild)
+    console.log(div.parentElement)
+    console.log(div.firstElementChild.parentElement)
+    console.log(div.firstElementChild.nextElementSibling)
+    console.log(div.firstElementChild.previousSibling)
+    console.log(div.lastElementChild)
+</script>
+
+</html>
