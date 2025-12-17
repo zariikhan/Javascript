@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+
+<body>
+    <div style="width: 40vw; height: 60vh; background-color: aqua;" id="first=div">
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi, delectus?</p>
+        <p>Lorem, ipsum dolor.</p>
+        <button>click</button>
+
+        <ul>
+            <li>orange</li>
+            <li>bannana</li>
+            <li>strawberry</li>
+            <li>apple</li>
+        </ul>
+    </div>
+</body>
+<script>
+    // method 1
+    let element = document.createElement("h2")
+    console.log(element)
+    element.innerText = "creating element"
+    document.querySelector("div").append(element)
+    element.id = "newElement"
+    element.classList.add("heading-2")
+    element.classList.remove("heading-2")
+    element.classList.toggle("heading-2")
+    element.classList.toggle("heading-2")
+    element.classList.toggle("heading-2")
+    element.classList.replace("heading-2", "head-2")
+
+    // document.querySelector("div").prepend(element)
+    // document.querySelector("div").before(element)
+    // document.querySelector("div").after(element)
+
+    // method 2
+    let div = document.createElement("div")
+    let divText = document.createTextNode("this is how we can insert new elements")
+    div.append(divText)
+    // document.querySelector("div").before(div)
+    let target = document.querySelector("div")
+    target.insertBefore(div, target.children[2])
+
+    // method 3
+    let newElement = document.createElement("p")
+    let pText = document.createTextNode("method 3")
+    newElement.append(pText)
+
+    target.insertAdjacentElement("beforebegin", newElement)
+
+    let newtag = "<h3>this is heading 3</h3>"
+    target.insertAdjacentHTML("beforebegin", newtag)
+
+    let text = "lorem 50"
+    target.insertAdjacentText("beforeend", text)
+
+
+    let ul = document.querySelector("ul")
+    let oldLi = ul.children[2]
+    let newLi = document.createElement("li")
+    newLi.innerText = "grapes"
+
+    // ul.replaceChild(newLi, oldLi)
+    // ul.removeChild(oldLi)
+    // ul.remove(oldLi)
+
+
+
+</script>
+
+</html>
