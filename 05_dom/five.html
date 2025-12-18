@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>hello</p>
+
+    <div id="title">Welcome</div>
+
+    <p class="text">One</p>
+    <p class="text">Two</p>
+    <p class="text">Three</p>
+
+    <ul id="list"></ul>
+    <img id="logo">
+
+    <div class="card">
+        <h2 class="title">Card 1</h2>
+        <p class="desc">Description 1</p>
+    </div>
+    <div class="card">
+        <h2 class="title">Card 2</h2>
+        <p class="desc">Description 2</p>
+    </div>
+    <div class="card">
+        <h2 class="title">Card 3</h2>
+        <p class="desc">Description 3</p>
+    </div>
+
+    <div class="product">
+        <h3>Phone</h3>
+        <p class="price">500</p>
+    </div>
+    <div class="product">
+        <h3>Laptop</h3>
+        <p class="price">1200</p>
+    </div>
+    <div class="product">
+        <h3>Tablet</h3>
+        <p class="price">800</p>
+    </div>
+
+    <ul>
+        <li data-stock="0">Item 1</li>
+        <li data-stock="3">Item 2</li>
+        <li data-stock="5">Item 3</li>
+    </ul>
+
+
+</body>
+<script>
+    let el = document.querySelector("p")
+    el.textContent = "hi"
+    console.log(el.innerHTML)
+
+    let div = document.querySelector("#title")
+    div.textContent = "Hello DOM"
+
+    let p = document.querySelectorAll(".text")
+    p.forEach((p) => p.style.color = "blue")
+
+    let ul = document.querySelector("#list")
+    let newLi = document.createElement("li")
+    newLi.textContent = "javaScript"
+    ul.append(newLi)
+
+    let img = document.querySelector("#logo")
+    // img.setAttribute("src", "logo.png")
+    img.setAttribute("alt", "company logo")
+    // img.src = "logo.png"
+    // img.src = "company logo"
+
+    let cards = document.querySelectorAll(".card")
+    cards.forEach((card) => {
+        const span = document.createElement("span")
+        span.textContent = "NEW"
+
+        const title = card.querySelector(".title")
+        title.after(span)
+    })
+
+    let price = document.querySelectorAll(".price")
+    price.forEach((p) => {
+        const currentPrice = Number(p.textContent)
+        const newPrice = currentPrice * 1.1
+        p.textContent = newPrice.toFixed(2)
+    })
+    console.log(price)
+
+    let li = document.querySelectorAll("li")
+    li.forEach((li)=>{
+       let stock = li.dataset.stock
+        if(stock === "0"){
+            li.classList.add("out-of-stock")
+        }
+    })
+</script>
+
+</html>
