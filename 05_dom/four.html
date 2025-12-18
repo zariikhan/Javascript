@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom</title>
+</head>
+
+<body>
+    <ul class="fruits" style="margin-left: 10px;">
+        <li>Mango</li>
+    </ul>
+</body>
+<script>
+    function addingFruits(fruit) {
+        const li = document.createElement("li")
+        li.innerText = `${fruit}`
+        document.querySelector(".fruits").append(li)
+    }
+    addingFruits("strawberry")
+    addingFruits("apple")
+
+    function addOptiFruits(fruit) {
+        const li = document.createElement("li")
+        li.append(`${fruit}`)
+        document.querySelector(".fruits").append(li)
+    }
+    addOptiFruits("bannana")
+    addOptiFruits("grapes")
+
+    // edit
+    const firstLi = document.querySelector("li:first-child")
+    //   firstLi.innerText = "cherry"
+    const newLi = document.createElement('li')
+    newLi.innerText = "cherry"
+    firstLi.replaceWith(newLi)
+
+    const thirdLi = document.querySelector("li:nth-child(3)")
+    thirdLi.outerHTML = "<li>watermellon</li>"
+
+    // remove
+    const lastLi = document.querySelector("li:nth-child(3)")
+    lastLi.remove()
+    lastLi.remove()
+
+</script>
+
+</html>
