@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Event</title>
+</head>
+<style>
+    img {
+        margin: 10px;
+    }
+</style>
+
+
+<body>
+    <!-- <div class="boxes">
+        <div class="red " style="width: 100px; height: 100px; background-color: red; margin: 10px;"></div>
+        <div class="green " style="width: 100px; height: 100px; background-color: rgb(46, 234, 118); margin: 10px;">
+        </div>
+        <div class="pink " style="width: 100px; height: 100px; background-color: rgb(122, 21, 100); margin: 10px;">
+        </div>
+        <div class="orange " style="width: 100px; height: 100px; background-color: rgb(234, 144, 43); margin: 10px;">
+        </div>
+        <div class="cyan " style="width: 100px; height: 100px; background-color: rgb(41, 219, 228); margin: 10px;">
+        </div>
+    </div> -->
+
+    <ul id="images">
+        <li><img id="one" src="one.jpeg" alt="one.jpeg"></li>
+        <li><img id="two" src="two.jpeg" alt="two.jpeg"></li>
+        <li><img id="three" src="three.jpeg" alt="three.jpeg"></li>
+        <li><img id="four" src="four.jpeg" alt="four.jpeg"></li>
+        <li><img id="five" src="five.jpeg" alt="five.jpeg"></li>
+        <a id="link" href="https://google.com">go to google</a>
+    </ul>
+</body>
+<script>
+    // let div = document.querySelector("div")
+    // div.onclick = () => {
+    //     div.style.backgroundColor = "blue",
+    //         div.style.borderRadius = "50%"
+
+    // }
+    // div.onmouseover = () => {
+    //     div.style.backgroundColor = "pink",
+    //         div.style.borderRadius = "50%"
+
+    // }
+
+
+    // div.ondblclick = function () {
+    //     div.style.backgroundColor = "yellow"
+    // }
+
+    // div.onclick = (e) => {
+    //     console.log(e)
+    //     console.log(e.target)
+    //     console.log(e.clientX)
+    //     console.log(e.screenX)
+    //     console.log(e.timeStamp)
+    //     console.log(e.currentTarget)
+    //     console.log(e.shiftKey)
+    //     e.target.style.backgroundColor = "blue"
+    // }
+    // div.onmouseenter = (e) => {
+    //     console.log(e)
+    //     console.log(e.target)
+    //     console.log(e.clientX)
+    //     console.log(e.screenX)
+    //     console.log(e.timeStamp)
+    //     console.log(e.currentTarget)
+    //     console.log(e.shiftKey)
+    //     e.target.style.backgroundColor = "green"
+    // }
+
+
+    // let div = document.querySelector("#box")
+    // div.addEventListener("click", (e) => {
+    //     // alert("box clicked")
+    //     e.target.style.backgroundColor = "yellow"
+    //     e.target.style.borderRadius = "50%"
+    //     e.target.style.border = "4px solid black"
+    // })
+
+    /* there are two type of event propegation
+     1) event bubbling    false (by deafult) => commonly used   => from inside to outside
+     2) event capturing   true  => from outside to inside */
+
+    // document.querySelector(".boxes").addEventListener("click", (e) => {
+    //     console.log("boxes was clicked")
+    // }, true)
+    // document.querySelector(".orange").addEventListener("click", (e) => {
+    //     console.log("box was clicked")
+    // }, true)
+
+    document.querySelector("#images").addEventListener("click", (e) => {
+        console.log(e.target),
+            console.log(e.target.tagName)
+        if (e.target.tagName === "IMG") {
+            console.log(e.target.id)
+            let removeIt = e.target.parentNode
+            removeIt.remove()
+        }
+    })
+
+    document.querySelector("#link").addEventListener("click", (e) => {
+        e.preventDefault()
+        console.log("google clicked")
+    })
+</script>
+
+</html>
