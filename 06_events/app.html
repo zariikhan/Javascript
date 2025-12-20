@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Events</title>
+</head>
+
+<body>
+    <!-- <button id="btn">Click me</button> -->
+    <button id="save">Save</button>
+    <div id="parent">
+        <button id="child">Click</button>
+    </div>
+    <form id="form">
+        <input type="text">
+        <button type="submit">Submit</button>
+    </form>
+    <ul id="menu">
+        <li data-id="1">Home</li>
+        <li data-id="2">About</li>
+        <li data-id="3">Contact</li>
+    </ul>
+
+    <div id="box">
+        <button id="btn">Click</button>
+    </div>
+
+    <button id="toggle">Show</button>
+    <p id="text" style="display:none;">Hello World</p>
+
+    <ul id="tasks">
+        <li>Task 1</li>
+        <li>Task 2</li>
+    </ul>
+    <button id="addTask">Add Task</button>
+
+</body>
+<script>
+    // let btn = document.querySelector("#btn")
+    // method 1
+    // btn.onclick = () => {
+    //     console.log("Button Clicked")
+    // }
+
+    // // method 2
+    // btn.addEventListener("click", (e) => {
+    //     console.log("button clicked")
+    // })
+
+    document.querySelector("#save").addEventListener("click", (e) => {
+        console.log(e.type)
+        console.log(e.target)
+    })
+
+    document.querySelector("#parent").addEventListener("click", (e) => {
+        console.log("parent clicked")
+    })
+
+    document.querySelector("#child").addEventListener("click", (e) => {
+        console.log("child clicked")
+        e.stopPropagation()
+    })
+
+    document.querySelector("#form").addEventListener("submit", (e) => {
+        e.preventDefault()
+    })
+
+    document.querySelector("#menu").addEventListener("click", (e) => {
+        if (e.target.tagName === "LI") {
+            console.log(e.target.dataset.id)
+        }
+    })
+
+    document.querySelector("#box").addEventListener("click", (e) => {
+        console.log("parent clicked")
+    })
+
+    document.querySelector("#btn").addEventListener("click", (e) => {
+        console.log("button clicked")
+        e.stopPropagation()
+    })
+
+    let p = document.querySelector("#text")
+
+    let toggle = document.querySelector("#toggle").addEventListener("click", (e) => {
+        if (p.style.display === "none") {
+            p.style.display = "block"
+            toggle.textContent = "Hide";
+
+        } else {
+            p.style.display = "none"
+            toggle.textContent = "Show";
+        }
+    })
+
+    // document.querySelector("#tasks").addEventListener("click", (e) => {
+    //     console.log(e.target.textContent)
+    // })
+
+    // document.querySelector("#addTask").addEventListener("click", () => {
+    //     function addingLi(task) {
+    //         const li = document.createElement("li")
+    //         li.append(`${task}`)
+    //         document.querySelector("#tasks").append(li)
+    //     }
+    //     addingLi("Task 3")
+    // })
+
+    const task = document.querySelector("#tasks")
+    const addTask = document.querySelector("#addTask")
+    let taskNumber = task.children.length + 1
+
+    addTask.addEventListener("click", () => {
+        const li = document.createElement("li")
+        li.textContent = `Task ${taskNumber}`
+        task.append(li)
+        taskNumber++
+    })
+
+</script>
+
+</html>
