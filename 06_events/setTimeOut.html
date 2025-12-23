@@ -27,6 +27,157 @@
         console.log("stopped")
         e.target.style.color = "red"
     })
+
+    console.log("Start");
+
+    setTimeout(() => {
+        console.log("Timeout");
+    }, 1000);
+
+    console.log("End");
+
+    // let count = 1;
+
+    // const id = setInterval(() => {
+    //     console.log(count);
+    //     count++;
+
+    //     if (count === 4) {
+    //         clearInterval(id);
+    //     }
+    // }, 1000);
+
+    // let time = 60;
+    // const timer = setInterval(() => {
+    //     console.log(time);
+    //     time--;
+
+    //     if (time < 0) {
+    //         clearInterval(timer);
+    //         console.log("OTP expired");
+    //     }
+    // }, 1000);
+
+    // let num = 1
+    // const interval = setInterval(() => {
+    //     // console.log(num)
+    //     if (num === 5) {
+    //         clearInterval(interval)
+    //     }
+
+    // num++
+    // }, 1000)
+
+    // setTimeout(() => {
+    //     // console.log("Hello after 2 seconds")
+    // }, 2000)
+
+    // method 2
+    // let greet = "Hello"
+    // setTimeout(() => {
+    //     // console.log(`${greet} after 2 seconds`)
+    // }, 2000);
+
+    // method 3
+    // function greets(name) {
+    //     console.log(name)
+    // }
+    // setTimeout(greets, 2000, "Hello after 2 seconds");
+
+    // let count = 5
+    // const countInterval = setInterval(() => {
+    //     // console.log(count)
+
+    //     if (count === 0) {
+    //         console.log("Done")
+    //         clearInterval(countInterval)
+    //     }
+    //     count--
+
+    // }, 1000);
+
+    // for (let i = 1; i <= 3; i++) {
+    //     setTimeout(() => {
+    //         console.log(i);
+    //     }, 1000);
+    // }
+
+
+    // recursive timeout
+    // let i = 1
+    // function printingNumber() {
+    //     if (i > 10) return
+
+    //     console.log(i)
+    //     i++
+
+    //     setTimeout(printingNumber, 1000)
+    // }
+    // printingNumber()
+
+    // setTimeout(() => {
+    //     console.log("first")
+
+    //     setTimeout(() => {
+    //         console.log("second")
+
+    //         setTimeout(() => {
+    //             console.log("third")
+    //         }, 1000);
+    //     }, 1000);
+    // }, 1000);
+
+    // function delayedSum(a, b) {
+    //     console.log(a + b)
+    // }
+
+    // setTimeout(() => {
+    //     delayedSum(3, 4)
+    // }, 2000);
+
+    // let number = 1
+    // const numberInterval = setInterval(() => {
+    //     console.log(number)
+
+    //     if (number % 7 === 0) {
+    //         clearInterval(numberInterval)
+    //     }
+
+    //     number++
+
+    // }, 1000);
+
+    // setTimeout(() => {
+    //     console.log("1")
+    //     setTimeout(() => {
+    //         console.log("2")
+
+    //         setTimeout(() => {
+    //             console.log("3")
+
+    //             setTimeout(() => {
+    //                 console.log("4")
+    //                 setTimeout(() => {
+    //                     console.log("5")
+    //                 }, 1000);
+    //             }, 1000);
+    //         }, 1000);
+    //     }, 1000);
+    // }, 1000)
+
+    // for (let t = 1; t <= 5; t++) {
+    //     setTimeout(() => {
+    //         console.log(t)
+    //     }, t * 1000)
+    // }
+    const arr = ["A", "B", "C", "D"];
+
+    arr.forEach((item, index) => {
+        setTimeout(() => {
+            console.log(item);
+        }, index * 1000); // Delay increases per index
+    });
+
 </script>
 
 </html>
