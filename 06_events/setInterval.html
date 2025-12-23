@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+</head>
+
+<body>
+    <h1>Learning JavaScript</h1>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+</body>
+<script>
+
+    // const setTime = setInterval(() => {
+    //     console.log("zaryab", Date.now())
+    // }, 1000)
+
+    // clearInterval(setTime)
+    let interval;
+    const start = document.querySelector("#start")
+    start.addEventListener("click", () => {
+        interval = setInterval(() => {
+            console.log("zaryab khan", new Date().toLocaleTimeString())
+        }, 1000);
+    })
+
+    const stop = document.querySelector("#stop")
+    stop.addEventListener("click", () => {
+        clearInterval(interval)
+        console.log("stopped")
+    })
+</script>
+
+</html>
