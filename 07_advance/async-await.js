@@ -10,7 +10,7 @@ async function showMessage() {
   let response = await myPromise();
   console.log(response);
 }
-showMessage();
+// showMessage();
 
 function getData(data) {
   return new Promise((resolve, reject) => {
@@ -22,9 +22,9 @@ function getData(data) {
 }
 
 async function getAllData() {
-  await getData(1);
-  await getData(2);
-  await getData(3);
+  // await getData(1);
+  // await getData(2);
+  // await getData(3);
 }
 getAllData();
 
@@ -62,8 +62,73 @@ async function done() {
   console.log(response);
 }
 done();
-const done = async () => {
-  let respone = await waitOneSecond();
-  console.log(respone);
+// const done = async () => {
+//   let respone = await waitOneSecond();
+//   console.log(respone);
+// };
+// done();
+
+async function test() {
+  return "Hello";
+}
+test().then((result) => console.log(result));
+
+function waitTwoSecond() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("Done");
+    }, 2000);
+  });
+}
+
+async function wait() {
+  try {
+    let result = await waitTwoSecond();
+    console.log(result);
+  } catch (error) {
+    console.log(error);
+  }
+}
+wait();
+
+const getNumber = (num) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(num);
+    }, 1000);
+  });
 };
-done();
+
+async function finalNumber(num) {
+  try {
+    let res = await getNumber(num);
+    let mul = res * 2;
+    let add = mul + 10;
+    console.log(add);
+  } catch (error) {
+    console.log(error);
+  }
+}
+finalNumber(10);
+
+function taskOne() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("Task 1 done");
+    }, 2000);
+  });
+}
+
+function taskTwo() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("Task 2 is done");
+    }, 1000);
+  });
+}
+
+async function promises() {
+  let promiseAll = await Promise.all([taskOne(), taskTwo()]);
+  console.log(promiseAll);
+}
+promises();
