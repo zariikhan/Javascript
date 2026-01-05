@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color changer</title>
+    <style>
+      .canvas {
+        width: 25vw;
+        height: 80vh;
+        margin: auto;
+        margin-top: 100px;
+      }
+
+      h1 {
+        text-transform: capitalize;
+        text-align: center;
+      }
+
+      span {
+        display: inline-block;
+        margin-top: 30px;
+      }
+
+      #gray {
+        width: 100px;
+        height: 100px;
+        background-color: gray;
+        border: 2px solid black;
+        margin-left: 20px;
+      }
+
+      #white {
+        width: 100px;
+        height: 100px;
+        background-color: white;
+        border: 2px solid black;
+      }
+
+      #blue {
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+        border: 2px solid black;
+      }
+
+      #yellow {
+        width: 100px;
+        height: 100px;
+        background-color: yellow;
+        border: 2px solid black;
+        margin-left: 129px;
+        margin-top: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="canvas">
+      <h1>color scheme switcher</h1>
+      <span class="box" id="gray"></span>
+      <span class="box" id="white"></span>
+      <span class="box" id="blue"></span>
+      <span class="box" id="yellow"></span>
+    </div>
+
+    <script>
+      const box = document.querySelectorAll(".box");
+      const canvas = document.querySelector(".canvas");
+
+      box.forEach((box) => {
+        console.log(box);
+        box.addEventListener("click", (e) => {
+          console.log(e);
+          console.log(e.target);
+          // if(e.target.id === "gray"){
+          //     canvas.style.backgroundColor = 'gray'
+          // }
+          // if(e.target.id === "white"){
+          //     canvas.style.backgroundColor = 'white'
+          // }
+          // if(e.target.id === "blue"){
+          //     canvas.style.backgroundColor = 'blue'
+          // }
+          // if(e.target.id === "yellow"){
+          //     canvas.style.backgroundColor = 'yellow'
+          // }
+          switch (e.target.id) {
+            case "gray":
+              canvas.style.backgroundColor = "gray";
+              break;
+            case "white":
+              canvas.style.backgroundColor = "white";
+              break;
+            case "blue":
+              canvas.style.backgroundColor = "blue";
+              break;
+            case "yellow":
+              canvas.style.backgroundColor = "yellow";
+              break;
+            default:
+              canvas.style.backgroundColor = "green";
+              break;
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
