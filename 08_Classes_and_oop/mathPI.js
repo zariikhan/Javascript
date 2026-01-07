@@ -13,16 +13,16 @@ console.log(Object.getOwnPropertyDescriptor(student, "name"));
 for (let key in student) {
   console.log(`${key} : ${student[key]}`);
 }
-// const descriptor = Object.defineProperty(student, "name", {
-//   writable: false,
-//   enumerable: false,
-// });
-// console.log(descriptor);
+const descriptor = Object.defineProperty(student, "name", {
+  writable: false,
+  //   enumerable: false,
+});
+console.log(descriptor);
 
 // we can also add new property
-const descriptor = Object.defineProperty(student, "year", {
-  value: "2000",
-});
+// const descriptor = Object.defineProperty(student, "year", {
+//   value: "2000",
+// });
 // console.log(descriptor);
 
 const desc = Object.defineProperties(student, {
@@ -35,4 +35,21 @@ const desc = Object.defineProperties(student, {
     enumerable: false,
   },
 });
-console.log(desc);
+// console.log(desc);
+
+const user = {
+  name: "zaryab",
+};
+
+console.log(Object.getOwnPropertyDescriptor(user, "name"));
+
+const product = {
+  price: 2000,
+};
+
+Object.defineProperty(product, "price", {
+  writable: false,
+  enumerable: true,
+});
+
+console.log(Object.getOwnPropertyDescriptor(product, "price"));
