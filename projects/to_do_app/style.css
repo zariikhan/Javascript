@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f2dcb3;
+}
+
+#to-do {
+  margin: auto;
+  margin-top: 50px;
+  height: 60vh;
+  width: 25vw;
+  background-color: #281f20;
+  border-radius: 10px;
+}
+
+#to-do h3 {
+  text-transform: capitalize;
+  color: white;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 20px;
+}
+
+#to-do input {
+  width: 40%;
+  height: 6%;
+  padding-left: 20px;
+  margin: 10px 0px 0px 70px;
+}
+
+#to-do button {
+  width: 50px;
+  padding: 5px;
+}
+
+ul {
+  color: white;
+  margin-left: 80px;
+  margin-top: 10px;
+  list-style: none;
+}
